@@ -1,0 +1,494 @@
+@import url("https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url(./blackmode.jpg);
+  background-position: center;
+  color: #000;
+}
+
+.moveon {
+  background-image: url(./pinkmode.jpg);
+}
+.pinkmode {
+  background-color: #e60073;
+}
+
+.blackbox {
+  background-color: rgba(0, 0, 0, 0.52);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.9px);
+  -webkit-backdrop-filter: blur(5.9px);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  --background: #000;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: 0.5s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 8px -4px 0px 0px #fff000;
+  background: var(--background);
+  transition: 0.5s;
+}
+
+input:checked + .slider {
+  background-color: #9b188e;
+}
+
+input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px #fff000;
+}
+header {
+  background-color: #262626;
+}
+.container {
+  direction: rtl;
+  font-family: "Lemonada", cursive;
+}
+.nav-item {
+  list-style: none;
+}
+
+.nav-link,
+.nav-logo {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar {
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-family: "Lemonada", cursive;
+  font-size: 0.65rem;
+}
+
+.nav-logo {
+  font-size: 2.5rem;
+  font-family: "Neonderthaw";
+  text-shadow: 2px 2px 10px #e60073;
+}
+
+.nav-link {
+  transition: 0.2s ease;
+}
+.nav-link:hover {
+  color: rgba(255, 255, 255, 0.168);
+}
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+}
+
+@media (max-width: 1400px) {
+  .hamburger {
+    display: block;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #262626;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    z-index: 5;
+    opacity: 0.95;
+  }
+  .nav-item {
+    margin: 16px 0;
+  }
+  .nav-menu.active {
+    left: 0;
+  }
+}
+
+.pizza,
+.burger,
+.pasta,
+.maincourse,
+.Salad,
+.Appetizer,
+.Colddrink,
+.Hotdrink,
+.Dessert,
+.Hookahm,
+.Beverage,
+.Contact {
+  display: block;
+  margin-top: 50px;
+  width: 100%;
+  text-align: center;
+}
+.box {
+  margin: 20px auto;
+  padding: 20px;
+  width: 90%;
+  height: max-content;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 1.3rem;
+  text-shadow: 2px 2px 10px #e60073;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pizza-baner,
+.neon-logo-pink {
+  font-size: 4rem;
+  font-family: "Neonderthaw", cursive;
+  color: #e60073;
+  -moz-animation: pizza 1s ease-in-out infinite alternate;
+  animation: pizza 1s ease-in-out infinite alternate;
+}
+@keyframes pizza {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px, 0 0 40px  #d2062f,
+      0 0 50px  #d2062f, 0 0 60px #d2062f, 0 0 70px #d2062f;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff8ba2, 0 0 40px #ff8ba2,
+      0 0 50px #ff8ba2 0 0 60px #ff8ba2, 0 0 70px #ff8ba2, 0 0 80px #ff8ba2;
+  }
+}
+
+.burger {
+  text-shadow: 2px 2px 10px #ff9800;
+}
+
+.burger-baner,
+.neon-logo-orange {
+  font-size: 4rem;
+  font-family: "Neonderthaw", cursive;
+  color: #ff9800;
+  -moz-animation: burger 1s ease-in-out infinite alternate;
+  animation: burger 1s ease-in-out infinite alternate;
+}
+@keyframes burger {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px, 0 0 40px #ff6f00,
+      0 0 50px #ff6f00, 0 0 60px #ff6f00, 0 0 70px #ff6f00;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #e65100, 0 0 40px #e65100,
+      0 0 50px #e65100 0 0 60px #e65100, 0 0 70px #e65100, 0 0 80px #e65100;
+  }
+}
+
+.pasta {
+  text-shadow: 2px 2px 10px #fdd835;
+}
+
+.pasta-baner,
+.neon-logo-yellow {
+  font-size: 4rem;
+  font-family: "Neonderthaw", cursive;
+  color: #fdd835;
+  -moz-animation: pasta 1s ease-in-out infinite alternate;
+  animation: pasta 1s ease-in-out infinite alternate;
+}
+@keyframes pasta {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px, 0 0 40px #ffff00,
+      0 0 50px #ffff00, 0 0 60px #ffff00, 0 0 70px #ffff00;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #fff176, 0 0 40px #fff176,
+      0 0 50px #fff176 0 0 60px #fff176, 0 0 70px #fff176, 0 0 80px #fff176;
+  }
+}
+
+.maincourse {
+  text-shadow: 2px 2px 10px #c62828;
+}
+
+.maincourse-baner,
+.neon-logo-red {
+  font-size: 4rem;
+  font-family: "Neonderthaw", cursive;
+  color: #c62828;
+  -moz-animation: maincourse 1s ease-in-out infinite alternate;
+  animation: maincourse 1s ease-in-out infinite alternate;
+}
+@keyframes maincourse {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px, 0 0 40px #ff1744,
+      0 0 50px #ff1744, 0 0 60px #ff1744, 0 0 70px #ff1744;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff5252, 0 0 40px #ff5252,
+      0 0 50px #ff5252 0 0 60px #ff5252, 0 0 70px #ff5252, 0 0 80px #ff5252;
+  }
+}
+
+.Salad {
+  text-shadow: 2px 2px 10px #2e7d32;
+}
+
+.Salad-baner,
+.neon-logo-green {
+  font-size: 4rem;
+  font-family: "Neonderthaw", cursive;
+  color: #2e7d32;
+  -moz-animation: Salad 1s ease-in-out infinite alternate;
+  animation: Salad 1s ease-in-out infinite alternate;
+}
+@keyframes Salad {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px, 0 0 40px #00e676,
+      0 0 50px #00e676, 0 0 60px #00e676, 0 0 70px #00e676;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #b9f6ca, 0 0 40px #b9f6ca,
+      0 0 50px #b9f6ca 0 0 60px #b9f6ca, 0 0 70px #b9f6ca, 0 0 80px #b9f6ca;
+  }
+}
+
+.Appetizer {
+  text-shadow: 2px 2px 10px #673ab7;
+}
+
+.Appetizer-baner,
+.neon-logo-purple {
+  font-size: 4rem;
+  font-family: "Neonderthaw", cursive;
+  color: #673ab7;
+  -moz-animation: Appetizer 1s ease-in-out infinite alternate;
+  animation: Appetizer 1s ease-in-out infinite alternate;
+}
+@keyframes Appetizer {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px, 0 0 40px #7c4dff,
+      0 0 50px #7c4dff, 0 0 60px #7c4dff, 0 0 70px #7c4dff;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #b388ff, 0 0 40px #b388ff,
+      0 0 50px #b388ff 0 0 60px #b388ff, 0 0 70px #b388ff, 0 0 80px #b388ff;
+  }
+}
+
+.Colddrink {
+  text-shadow: 2px 2px 10px #2196f3;
+}
+
+.Colddrink-baner,
+.neon-logo-blue {
+  font-size: 4rem;
+  font-family: "Neonderthaw", cursive;
+  color: #2196f3;
+  -moz-animation: Colddrink 1s ease-in-out infinite alternate;
+  animation: Colddrink 1s ease-in-out infinite alternate;
+}
+@keyframes Colddrink {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px, 0 0 40px #1565c0,
+      0 0 50px #1565c0, 0 0 60px #1565c0, 0 0 70px #1565c0;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #82b1ff, 0 0 40px #82b1ff,
+      0 0 50px #82b1ff 0 0 60px #82b1ff, 0 0 70px #82b1ff, 0 0 80px #82b1ff;
+  }
+}
+
+.Hotdrink {
+  text-shadow: 2px 2px 10px #5d4037;
+}
+
+.Hotdrink-baner,
+.neon-logo-brown {
+  font-size: 4rem;
+  font-family: "Neonderthaw", cursive;
+  color: #5d4037;
+  -moz-animation: Hotdrink 1s ease-in-out infinite alternate;
+  animation: Hotdrink 1s ease-in-out infinite alternate;
+}
+@keyframes Hotdrink {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px, 0 0 40px #8d6e63,
+      0 0 50px #8d6e63, 0 0 60px #8d6e63, 0 0 70px #8d6e63;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #bcaaa4, 0 0 40px #bcaaa4,
+      0 0 50px #bcaaa4 0 0 60px #bcaaa4, 0 0 70px #bcaaa4, 0 0 80px #bcaaa4;
+  }
+}
+
+.Dessert {
+  text-shadow: 2px 2px 10px #1de9b6;
+}
+
+.Dessert-baner,
+.neon-logo-teal {
+  font-size: 4rem;
+  font-family: "Neonderthaw", cursive;
+  color: #1de9b6;
+  -moz-animation: Dessert 1s ease-in-out infinite alternate;
+  animation: Dessert 1s ease-in-out infinite alternate;
+}
+@keyframes Dessert {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px, 0 0 40px #4db6ac,
+      0 0 50px #4db6ac, 0 0 60px #4db6ac, 0 0 70px #4db6ac;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #a7ffeb, 0 0 40px #a7ffeb,
+      0 0 50px #a7ffeb 0 0 60px #a7ffeb, 0 0 70px #a7ffeb, 0 0 80px #a7ffeb;
+  }
+}
+
+.Hookah {
+  text-shadow: 2px 2px 10px #455a64;
+}
+
+.Hookah-baner,
+.neon-logo-gray {
+  font-size: 4rem;
+  font-family: "Neonderthaw", cursive;
+  color: #455a64;
+  -moz-animation: Hookah 1s ease-in-out infinite alternate;
+  animation: Hookah 1s ease-in-out infinite alternate;
+}
+@keyframes Hookah {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px, 0 0 40px #90a4ae,
+      0 0 50px #90a4ae, 0 0 60px #90a4ae, 0 0 70px #90a4ae;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #cfd8dc, 0 0 40px #cfd8dc,
+      0 0 50px #cfd8dc 0 0 60px #cfd8dc, 0 0 70px #cfd8dc, 0 0 80px #cfd8dc;
+  }
+}
+
+.Beverage {
+  text-shadow: 2px 2px 10px #c6ff00;
+}
+
+.Beverage-baner,
+.neon-logo-lime {
+  font-size: 4rem;
+  font-family: "Neonderthaw", cursive;
+  color: #c6ff00;
+  -moz-animation: Beverage 1s ease-in-out infinite alternate;
+  animation: Beverage 1s ease-in-out infinite alternate;
+}
+@keyframes Beverage {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px, 0 0 40px #eeff41,
+      0 0 50px #eeff41, 0 0 60px #eeff41, 0 0 70px #eeff41;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #f4ff81, 0 0 40px #f4ff81,
+      0 0 50px #f4ff81 0 0 60px #f4ff81, 0 0 70px #f4ff81, 0 0 80px #f4ff81;
+  }
+}
+.Contact {
+  text-shadow: 2px 2px 10px #18ffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.Contact-baner,
+.neon-logo-cyan {
+  font-size: 4rem;
+  font-family: "Neonderthaw", cursive;
+  color: #18ffff;
+  -moz-animation: Contact 1s ease-in-out infinite alternate;
+  animation: Contact 1s ease-in-out infinite alternate;
+}
+@keyframes Contact {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px, 0 0 40px #00b8d4,
+      0 0 50px #00b8d4, 0 0 60px #00b8d4, 0 0 70px #00b8d4;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #84ffff, 0 0 40px #84ffff,
+      0 0 50px #84ffff 0 0 60px #84ffff, 0 0 70px #84ffff, 0 0 80px #84ffff;
+  }
+}
+
+.tel {
+  display: block;
+  margin: 10px auto;
+  color: #00b8d4;
+  text-decoration: none;
+}
+
+.designer{
+  font-size: 0.7rem;
+  text-decoration: none;
+  color: #fff;
+}
